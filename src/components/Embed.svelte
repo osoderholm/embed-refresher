@@ -10,7 +10,7 @@
 </script>
 
 <div>
-    <iframe id="iframe" src={url}></iframe>
+    <iframe title="" id="iframe" src={url}></iframe>
 </div>
 
 <style>
