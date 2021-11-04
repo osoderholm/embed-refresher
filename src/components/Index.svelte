@@ -1,6 +1,6 @@
-<script>
-    let url = "";
-    let seconds = 0;
+<script lang="ts">
+    let url: string = "";
+    let seconds: number = 0;
 
     $: result = `${location.origin}/?url=${encodeURIComponent(url)}&refresh=${seconds}`;
 </script>
@@ -29,6 +29,7 @@
         </div>
     {/if}
     <div class="links">
+        <div>Source code on <a href="https://github.com/osoderholm/embed-refresher">GitHub</a></div>
         <div>Icons made by <a href="https://www.flaticon.com/authors/juicy-fish" title="juicy_fish">juicy_fish</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </div>
 </div>
