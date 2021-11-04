@@ -41,7 +41,8 @@ export default {
 	},
 	plugins: [
 		replace({
-			"process.env.CF_TOKEN": process.env.CF_TOKEN,
+			preventAssignment: true,
+			"process.env.CF_TOKEN": process.env.CF_TOKEN && `"${process.env.CF_TOKEN}"`,
 		}),
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),
