@@ -9,14 +9,15 @@
 
     const url: string = searchParams.get("url");
     const seconds: number = searchParams.get("refresh") ? to_number(searchParams.get("refresh")) : 0;
+    const zoom: number = searchParams.get("zoom") ? to_number(searchParams.get("zoom")) : 100;
 
     const cfBeacon: string = `{"token": "${cfToken}"}`;
 
 </script>
 
 <main>
-    {#if url && url.length > 0 && seconds && seconds > 0}
-        <Embed url={url} timeout={seconds}/>
+    {#if url && url.length > 0}
+        <Embed url={url} timeout={seconds} zoom={zoom}/>
     {:else}
         <Index/>
     {/if}
