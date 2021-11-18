@@ -62,8 +62,6 @@
         flex-flow: column;
         max-width: 300px;
         align-self: center;
-    }
-    .form input {
         width: 100%;
     }
     .links {
