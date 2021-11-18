@@ -1,8 +1,9 @@
 <script lang="ts">
     let url: string = "";
     let seconds: number = 0;
+    let zoom: number = 100;
 
-    $: result = `${location.origin}/?url=${encodeURIComponent(url)}&refresh=${seconds}`;
+    $: result = `${location.origin}/?url=${encodeURIComponent(url)}&refresh=${seconds}&zoom=${zoom}`;
 </script>
 
 <div class="root">
@@ -11,6 +12,7 @@
         <p>Specify the URL and the refresh interval. The resulting link will show the URL and refresh it automatically.</p>
         <p>Useful for situations where a page does not automatically refresh its contents.</p>
         <p>Keep in mind that the embedded pages must allow embedding (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>)</p>
+        <p><strong>NEW!</strong> You can now specify a zoom level. This only works on some sites.</p>
     </div>
     <div class="form">
         <label>
@@ -18,13 +20,18 @@
             <input type="url" bind:value={url}>
         </label>
         <label>
-            Refresh timeout (seconds)
+            <span>Refresh timeout (seconds)</span>
+            <span>(0 seconds = no refreshing)</span>
             <input type="number" min=0 bind:value={seconds}>
         </label>
+        <label>
+            Zoom %
+            <input type="number" min=1 max="500" bind:value={zoom}>
+        </label>
     </div>
-    {#if url.length > 0 && seconds > 0}
+    {#if url.length > 0 && seconds >= 0 && zoom > 0}
         <div class="result">
-            <p>Here is your refreshing link:</p>
+            <p>Here is your link:</p>
             <a target="_blank" href={result} >{result}</a>
         </div>
     {/if}
@@ -55,6 +62,7 @@
         flex-flow: column;
         max-width: 300px;
         align-self: center;
+        width: 100%;
     }
     .links {
         margin-top: 10rem;
