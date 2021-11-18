@@ -63,6 +63,9 @@
         max-width: 300px;
         align-self: center;
     }
+    .form input {
+        width: 100%;
+    }
     .links {
         margin-top: 10rem;
         font-size: 8pt;
