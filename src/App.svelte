@@ -28,5 +28,9 @@
     <!-- End Cloudflare Web Analytics -->
 {/if}
 
-<style global>
+<style>
+    main {
+        height: 100%;
+        width: 100%;
+    }
 </style>

@@ -16,8 +16,8 @@
         -o-transform-origin: 0 0;
         -webkit-transform: scale(${zoom/100.00});
         -webkit-transform-origin: 0 0;
-        height: calc(1 / ${zoom/100.00} * 100vh);
-        width: calc(1 / ${zoom/100.00} * 100vw);`;
+        height: calc(1 / ${zoom/100.00} * 100%);
+        width: calc(1 / ${zoom/100.00} * 100%);`;
 </script>
 
 <div class="wrap">
@@ -26,13 +26,13 @@
 
 <style>
     .wrap {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         overflow: hidden;
     }
     #iframe {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         border: none;
         padding: 0;
         margin: 0;
